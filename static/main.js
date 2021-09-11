@@ -1,30 +1,14 @@
 
-
-// Importing the k-Nearest Neighbors Algorithm
 import {
   KNNImageClassifier
 } from 'deeplearn-knn-image-classifier';
 import * as dl from 'deeplearn';
-
-// Webcam Image size. Must be 227.
 const IMAGE_SIZE = 227;
-// K value for KNN. 10 means that we will take votes from 10 data points to classify each tensor.
 const TOPK = 10;
-// Percent confidence above which prediction needs to be to return a prediction.
 const confidenceThreshold = 0.98
-
-// Initial Gestures that need to be trained.
-// The start gesture is for signalling when to start prediction
-// The stop gesture is for signalling when to stop prediction
 var words = ["start", "stop"];
-
-/*
-The Main class is responsible for the training and prediction of words.
-It controls the webcam, user interface, as well as initiates the output of predicted words.
-*/
 class Main {
   constructor() {
-    // Initialize variables for display as well as prediction purposes
     this.exampleCountDisplay = [];
     this.checkMarks = [];
     this.gestureCards = [];
@@ -94,9 +78,6 @@ class Main {
     // Instantiate Prediction Output
     this.predictionOutput = new PredictionOutput();
   }
-
-  /*This function starts the webcam and initial training process. It also loads the kNN
-  classifier*/
   initializeTranslator() {
     this.startWebcam();
     this.initialTraining();
@@ -119,9 +100,6 @@ class Main {
         this.video.addEventListener('paused', () => this.videoPlaying = false);
       })
   }
-
-  /*This function initializes the training for Start and Stop Gestures. It also 
-  sets a click listener for the next button.*/
   initialTraining() {
     // if next button on initial training page is pressed, setup the custom gesture training UI.
     this.nextButton.addEventListener('click', () => {
@@ -738,9 +716,6 @@ class PredictionOutput {
       }
     });
   }
-
-  /*This function speaks out the user's gestures. In video call mode, it speaks out the other
-  user's words.*/
   speak(word) {
     var utterThis = new SpeechSynthesisUtterance(word);
 
@@ -757,8 +732,6 @@ class PredictionOutput {
 }
 
 var main = null;
-
-//Initializes the main class on window load
 window.addEventListener('load', () => {
   main = new Main()
 });

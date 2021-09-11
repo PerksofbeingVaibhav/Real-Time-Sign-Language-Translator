@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="Images/asl_logo.ico" />
+    <title>Sign Translator</title>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/stylet.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/animatet.css') }}">
+    <script src="{{ url_for('static',filename='dist/build.js') }}"></script>
+</head>
+
+<body>
+       <a href="index3.html"><button id="proceedButton">Check Our Credit Page</button></a>
+
+    <div id="titleBar">
+        <h1 id="stage">Train Gestures</h1>
+        <h3 id="steps">Train about 30 samples of your Start Gesture and 30 for your idle, Stop Gesture.</h3>
+        <button id="nextButton" class="animated flash delay-3s">Next</button>
+        <button id="predictButton" class="animated flash slideInRight faster">Translate</button>
+        <button id="backButton" class="animated slideInLeft faster">Back to Training</button>
+        <button id="videoCallBtn" class="videoCallBtn animated slideInRight faster">Video Call</button>
+    </div>
+    <div id="status">
+        <p id="status-text">Status: Not Ready</p>
+    </div>
+    <div id="translatorWindow">
+        <div id="initialTrainingHolder">
+            <img src="{{ url_for('static',filename='images/loader.jpg') }}" checkmark id="checkmark_startButton" class="checkMark">
+            <button id="startButton" class="trainButton ">Start Gesture</button>
+            <button id="clear_startButton" class="clearButton">Clear</button>
+            <h3 id="counter_startButton" class="counter"></h3>
+
+            <button id="stopButton" class="trainButton ">Stop Gesture</button>
+            <button id="clear_stopButton" class="clearButton">Clear</button>
+            <h3 id="counter_stopButton" class="counter"></h3>
+            <img src="{{ url_for('static',filename='images/loader.jpg') }}" alt="checkmark" id="checkmark_stopButton" class="checkMark">
+        </div>
+        <div id="videoHolder" class="videoContainerTrain">
+            <video id="video" class="videoTrain" muted autoplay playsinline></video>
+            <iframe src="https://tokbox.com/embed/embed/ot-embed.js?embedId=f37957b6-0f91-4fc5-90ce-f818cc85b5bf&room=DEFAULT_ROOM&iframe=true" allow="microphone; camera" id="videoCall"></iframe>
+        </div>
+        <div id="trainingHolder">
+            <h5 id="add-gesture">Add Gesture</h5>
+            <img src="{{ url_for('static',filename='images/plus_sign.svg') }}" alt="Plus Sign" id="plus_sign" class="plus_sign animated">
+            <form id="add-word" autocomplete="off">
+                <input type="text" id="new-word" placeholder="New Gesture Title">
+                <input type="submit" id="submit-word" value="Add Word &#9658;">
+            </form>
+            <button id="doneRetrain" class="doneRetrain">Done Retraining</button>
+
+            <div id="trainingCommands"></div>
+        </div>
+        <div id="translationHolder">
+            <div id="translatedCard">
+            </div>
+            <h3 id="translationText">Start Signing!</h3>
+        </div>
+    </div>
+    <div id="trainedCardsHolder">
+    </div>
+</body>
+
+</html>

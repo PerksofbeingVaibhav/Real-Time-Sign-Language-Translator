@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>navbar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/style3.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/animate.css') }}" />
+    <script src="{{ url_for('static',filename='dist/build.js') }}"></script>
+  </head>
+  <body>
+    <header>
+      <div id="menu" class="fas fa-bars"></div>
+      <nav class="navbar">
+        <a class="active" href="#home">home</a>
+        <a href="#">SYNOPSIS</a>
+        <a href="#doctor">DSC-KIET MENTORS</a>
+      </nav>
+    </header>
+    <!-- HOME SECTION STARTS -->
+    <section class="home" id="home">
+      <div class="content">
+        <h1>Learn More About Sign Language</h1>
+        <h3>Click On The Given Button To Practice</h3>
+        <a href="index4.html" class="btn">Let's Go</a>
+      </div>
+    </section>
+    <!-- Synopsis starts -->
+    <section class="synopsis" id="prevent">
+    <div class="box-container">
+      <div class="box">
+        <img src="{{ url_for('static',filename='images/1.jpg') }}" alt="" />
+        <h3>Chironomy.</h3>
+        <p>
+          A sign language interpreter is a person trained in translating between
+          a spoken and signed language. This usually means someone who
+          interprets what is being said and signs it for someone who can't hear,
+          but understands the sign. In this project the user has to train
+          gestures for initiating and terminating the conversation between the
+          people who are not able to hear.
+        </p>
+      </div>
+      <div class="box">
+        <img src="{{ url_for('static',filename='images/2.jpg') }}" alt="" />
+        <h3>HOW IT WORKS?</h3>
+        <p>
+          In this project a pop-up window will be opened to your interface in
+          which the system requires your permission in order to grant access to
+          your camera and microphone. After allowing, the user gets directed to
+          the 2nd page in which the system asks the user to train their gestures
+          by making symbols in-front of the camera and clicking on the Start
+          Gesture till it reaches 30 times and then clicking on Stop Gesture.
+          (NOTE: - the user has to cover the whole camera window in order to
+          make the things clear for them) Then the user is directed to another
+          page in which he/she has to add their gesture name and thus while
+          applying these gestures a voice command will try to tell the
+          admin/operator which gesture they are applying.
+        </p>
+      </div>
+      <div class="box">
+        <img src="{{ url_for('static',filename='images/3.png') }}" alt="">
+        <h3>Prequisite Knowledge</h3>
+        <p>You Should Have an ample amount of knowledge about html,css3,javascript for the front-end development and pyton with flask for back-end development.</p>
+        <p>You should also have a basic knowledge about tensorflow and bootswrap framework </p>
+    </div>
+    </div>
+    </section>
+    <!-- MENTORS -->
+    <section class="mentors" id="doctor">
+
+      <h1 class="heading">Our Project Mentors</h1>
+
+      <div class="box-container">
+
+        <div class="box">
+<img src="{{ url_for('static',filename='images/ps.jpg') }}">
+          <h3>Priyanshu Sharma</h3>
+          <span>Core Team</span>
+          <div class="share">
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+          </div>
+        </div>  
+       <div class="box">
+<img src="{{ url_for('static',filename='images/ps.jpg') }}">
+          <h3>Lakshay<br> Kumar</h3>
+          <span>Core Team</span>
+          <div class="share">
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+          </div>
+        </div>  
+        <div class="box">
+<img src="{{ url_for('static',filename='images/vc.jpeg') }}">
+          <h3>Vaibhav Chaudhary</h3>
+          <span>Full Stack Developer</span>
+          <div class="share">
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+          </div>
+        </div>  
+      </div>
+    </section>
+    <h1 class="credit"> Created By <a href="#">Vaibhav Chaudhary</a> &copy; copyright @ 2021 </h1>
+  </body>
+</html>
